@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {TodoListService} from "../todo-list.service";
 
 @Component({
   selector: 'todo-input',
@@ -6,18 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-private title : string='';
-  constructor() { 
-  }
-  ngOnInit() {
-  
+  private title: string = '';
+ // @Output() submit: EventEmitter<string> = new EventEmitter();
+
+  constructor(private todoService: TodoListService) {
   }
 
-  changeTitle(newTitle:string): void {
-    console.log (newTitle);
-    this.title = newTitle;
+  ngOnInit() {
   }
-  generateTitle():string{
+
+  changeTitle(newTitle: string): void {
+    console.log('info z inputa: ' + newTitle);
+    this.todoService.addItem(newTitle);
+  }
+
+  generateTitle(): string {
     return "tytuł z metody";
   }
 

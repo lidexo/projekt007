@@ -1,13 +1,1 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1 *ngIf="userLoggedIn">
-    Welcome!
-  </h1>
-  <todo-input></todo-input>
-  <ul>
-    <li *ngFor="let item of todoList">
-      <todo-item [itemTitle]="item.title"></todo-item>
-    </li>
-  </ul>
- </div>
-
+<todo-list-manager></todo-list-manager>
