@@ -1,0 +1,6 @@
+List of next step for TODO app
+
+1.Create inside item component new component item-edit
+2.Create inside item component new component item-detail with propertie : flag - set on false;
+3.Place item-edit in item-detail html page,
+4.Add button with text "Edit" create method to toggel the flag.
